@@ -1,0 +1,48 @@
+*{
+    //border: 1px dotted black;
+}
+html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+html body{
+    padding: 0px;
+    background-color: rgba(51, 204, 51, 0.5);
+}
+
+#header {
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+#data p{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-style: oblique;
+    font-size: 12px;
+    color: blue;
+}
+#credits {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 12px;
+}
+
+#updateDate{
+    color: blue;
+}
+
+#button {
+    margin: auto;
+    height: 50%;
+    width: 50%;
+    text-align: center;
+}
+
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+

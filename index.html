@@ -1,0 +1,59 @@
+<!doctype html>
+<html ng-app="currency">
+<head>
+    <meta charset="utf-8">
+    <meta name = "viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name = "description" content="Currency Calculator">
+    <title>Currency Calculator</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">                                                                            <!-- bootstrap css -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>             <!-- angularjs -->
+    
+    <script src="js/app.js"></script>
+    <script src="js/mainController.js"></script>
+</head>
+<body>
+    <div class="main" ng-controller="mainController">
+        <div id="header" class="container-fluid"> <!-- container fluid, dynamically changes size of header -->
+            <h1 class="text-center"> Currency Calculator</h1> <!-- text center, aligns text to the center --> 
+        </div>
+        <div id="data" class="container-fluid blackHeader">
+            <br>
+            <p class="text-center">Input the amount and select the currency you would like to compare</p>
+            <br>
+        </div>
+        
+        <div class="container-fluid">
+            <div class="row">
+                <div id="leftSide" class="col-xs-6">
+                    <div class="form-group">
+                        <label for="currency1">Convert Amount:</label>
+                        <input type="number" class="form-control" id="currency1" placeholder="type amount" ng-model="convertAmount1" ng-change="textOneChange()" >
+                        <select id="selectCurrency" class="form-control" name="currency" ng-model="convert" ng-options="var for (var,v) in rate"></select>
+                    </div>
+                </div>
+                
+                <div id="rightSide" class="col-xs-6">
+                    <div class="form-group">
+                        <label for="currency2">Result Amount:</label>
+                        <input type="number" class="form-control" id="currency2" placeholder="type amount" ng-model="convertAmount2" ng-change="textTwoChange()" >
+                        <select id="selectCurrency2" class="form-control" name="currency2" ng-model="convertTo" ng-options="var for (var,v) in rate"></select>
+                    </div>
+                </div>
+            </div>
+            <div id="button">
+                <button class="btn btn-large btn-success" ng-click="converting()">CONVERT</button>
+            </div>
+            <br>
+            <div id="credits" class="container-fluid">
+                <p class="text-center">Exchange rates provided by Fixer.io</p>
+                <p class="text-center">Exchange rates last updated on <span id="updateDate">{{date|date}}</span></p>
+            </div>
+            </div>
+        </div>
+
+
+</body>
+
+</html>
